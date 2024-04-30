@@ -56,7 +56,7 @@ You can install the dependencies using pip:
 
 pip install -r requirements.txt
 
-
+GUI.png
 ## Contribution
 
 If you find any issues or have suggestions for improvements, feel free to open an issue or create a pull request.
