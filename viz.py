@@ -8,7 +8,7 @@ df = pd.read_csv("merged_dataset.csv")
 
 # Create a Tkinter window
 root = tk.Tk()
-root.title("COVID-19 Data Visualization")
+root.title("INTELLIGENT GRAPHICAL USER INTERFACE APPLICATION FOE DATA ANALYSIS")
 root.configure(bg="#f0f0f0")
 
 # Function to plot the data

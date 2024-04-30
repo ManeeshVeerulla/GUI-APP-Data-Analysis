@@ -108,7 +108,7 @@ get_quality_of_life_button = tk.Button(button_frame, text="GET QUALITY OF LIFE D
 save_datasets_button = tk.Button(root, text="SAVE DATASETS", command=save_datasets, relief=tk.RAISED, padx=10, pady=5, anchor="w")
 
 # Create the "EDA" button
-eda_button = tk.Button(root, text="EXPLORATORY DATA ANALYSIS", command=lambda: perform_eda_and_display(Data.covid_df, display_shape), relief=tk.RAISED, padx=10, pady=5, anchor="w")
+eda_button = tk.Button(root, text="EXPLORATORY DATA ANALYSIS AND MACHINE LEARNING MODELS FOR PREDICTIVE ANALYSIS", command=lambda: perform_eda_and_display(Data.covid_df, display_shape), relief=tk.RAISED, padx=10, pady=5, anchor="w")
 
 # Create the "MERGE DATASETS" button
 merge_datasets_button = tk.Button(root, text="MERGE DATA", command=merge_datasets, relief=tk.RAISED, padx=10, pady=5, anchor="w")
@@ -118,10 +118,10 @@ check_headers_button = tk.Button(root, text="CHECK HEADERS", command=check_heade
 display_columns_button = tk.Button(root, text="CHECK COLUMN", command=display_columns)
 
 # Create the button to plot the data
-plot_button = tk.Button(root, text="PLOT DATA", command=plot_data, relief=tk.RAISED, padx=10, pady=5, anchor="w")
+plot_button = tk.Button(root, text="VISUALS ANALYSIS", command=plot_data, relief=tk.RAISED, padx=10, pady=5, anchor="w")
 
 # Create the button to run models
-run_models_button = tk.Button(root, text="RUN MODELS", command=run_models, relief=tk.RAISED, padx=10, pady=5, anchor="w")
+run_models_button = tk.Button(root, text="RUN MACHINE LEARNING MODELS", command=run_models, relief=tk.RAISED, padx=10, pady=5, anchor="w")
 
 # Apply some style enhancements
 get_covid_button.config(bg="#4CAF50", fg="white", font=('Helvetica', 10, 'bold')) 

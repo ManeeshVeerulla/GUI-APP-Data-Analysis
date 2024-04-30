@@ -3,18 +3,11 @@
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
-from tkinter import messagebox, filedialog
+from tkinter import messagebox, filedialog, ttk
 import Data
 import eda
 import tkinter as tk
-from tkinter import messagebox, filedialog
-import Data
-import pandas as pd
-import requests
-from bs4 import BeautifulSoup
 import io
-from tkinter import messagebox, filedialog
-from tkinter import ttk
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestClassifier

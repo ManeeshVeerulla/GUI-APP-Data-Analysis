@@ -11,7 +11,7 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 class CovidAnalysisApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("COVID-19 Analysis Tool")
+        self.root.title("INTELLIGENT GRAPHICAL USER INTERFACE APPLICATION FOE DATA ANALYSIS")
         self.root.configure(background="#f0f0f0")
 
         # Load the merged dataset
