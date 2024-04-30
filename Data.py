@@ -130,15 +130,3 @@ def save_datasets():
                 return True, f"{name} has been saved to {file_path}"
         else:
             return False, f"{name} is not available. Please fetch the data first."
-
-
-    # Loop through each dataset and save it to a CSV file
-    for name, df in datasets.items():
-        if df is not None:
-            # Open a file dialog to choose the save location
-            file_path = filedialog.asksaveasfilename(defaultextension=".csv", filetypes=(("CSV files", "*.csv"), ("All files", "*.*")), initialfile=f"{name}.csv")
-            if file_path:
-                df.to_csv(file_path, index=False)
-                return True, f"{name} has been saved to {file_path}"
-        else:
-            return False, f"{name} is not available. Please fetch the data first."

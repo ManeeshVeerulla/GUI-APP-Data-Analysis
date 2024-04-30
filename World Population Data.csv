@@ -1,4 +1,4 @@
-#,Country (or dependency),Population  (2023),Yearly  Change,Net  Change,Density  (P/Km²),Land Area  (Km²),Migrants  (net),Fert.  Rate,Med.  Age,Urban  Pop %,World  Share
+#,Country,Population  (2023),Yearly  Change,Net  Change,Density  (P/Km²),Land Area  (Km²),Migrants  (net),Fert.  Rate,Med.  Age,Urban  Pop %,World  Share
 1,India,1428627663,0.81 %,11454490,481,2973190,-486136,2.0,28.0,36 %,17.76 %
 2,China,1425671352,-0.02 %,-215985,152,9388211,-310220,1.2,39.0,65 %,17.72 %
 3,United States,339996563,0.50 %,1706706,37,9147420,999700,1.7,38.0,83 %,4.23 %

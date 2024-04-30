@@ -1,9 +1,9 @@
 import tkinter as tk
 from tkinter import messagebox, filedialog
 import pandas as pd
-from matplotlib.figure import Figure
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import Data
+import models
 
 # Function to fetch data when the corresponding button is clicked
 def fetch_data(fetch_func, success_msg):
@@ -29,25 +29,19 @@ def perform_eda_and_display(df, eda_func):
     else:
         messagebox.showerror("Error", result)
 
-# Function to merge datasets
 def merge_datasets():
-    # Check if all datasets are available
     if Data.covid_df is not None and Data.who_df is not None and Data.population_df is not None and Data.quality_of_life_df is not None:
-        # Merge the datasets
         merged_df = pd.merge(Data.covid_df, Data.who_df, on='Country', how='inner')
         merged_df = pd.merge(merged_df, Data.population_df, on='Country', how='inner')
         merged_df = pd.merge(merged_df, Data.quality_of_life_df, on='Country', how='inner')
-        
-        # Ask user to choose the save location
         file_path = filedialog.asksaveasfilename(defaultextension=".csv", filetypes=(("CSV files", "*.csv"), ("All files", "*.*")), initialfile="merged_dataset.csv")
         if file_path:
-            success, msg = Data.save_to_csv(merged_df, file_path)
-            if success:
-                messagebox.showinfo("Success", msg)
-            else:
-                messagebox.showerror("Error", msg)
+            # Save the merged DataFrame to CSV
+            merged_df.to_csv(file_path, index=False)  # Ensure index is not saved to the CSV
+            messagebox.showinfo("Success", "Merged dataset has been saved successfully.")
     else:
         messagebox.showerror("Error", "One or more datasets are missing. Please fetch all datasets first.")
+
 
 # Function to check headers of a DataFrame
 def check_headers():
@@ -78,13 +72,19 @@ def plot_data():
     import viz
     viz.plot_data()
 
+# Function to run models
+def run_models():
+    root = tk.Tk()
+    app = models.CovidAnalysisApp(root)
+    root.mainloop()
+
 # Create the main window
 root = tk.Tk()
 root.title("INTELLIGENT APPLICATION FOR DATA ANALYSIS")
 
 # Create a frame to contain the buttons
-button_frame = tk.Frame(root, bg="#f0f0f0")  # Set background color
-button_frame.grid(row=0, column=0, sticky="ew", padx=10, pady=10)  # Add padding
+button_frame = tk.Frame(root, bg="#f0f0f0")
+button_frame.grid(row=0, column=0, sticky="ew", padx=10, pady=10)
 
 # Create the notification panel frame
 notification_frame = tk.Frame(root, bg="#ffffff", bd=1, relief=tk.SUNKEN)
@@ -120,8 +120,11 @@ display_columns_button = tk.Button(root, text="CHECK COLUMN", command=display_co
 # Create the button to plot the data
 plot_button = tk.Button(root, text="PLOT DATA", command=plot_data, relief=tk.RAISED, padx=10, pady=5, anchor="w")
 
+# Create the button to run models
+run_models_button = tk.Button(root, text="RUN MODELS", command=run_models, relief=tk.RAISED, padx=10, pady=5, anchor="w")
+
 # Apply some style enhancements
-get_covid_button.config(bg="#4CAF50", fg="white", font=('Helvetica', 10, 'bold'))  # Change background color, font color, and font style
+get_covid_button.config(bg="#4CAF50", fg="white", font=('Helvetica', 10, 'bold')) 
 get_who_button.config(bg="#2196F3", fg="white", font=('Helvetica', 10, 'bold'))
 get_population_button.config(bg="#FFC107", fg="white", font=('Helvetica', 10, 'bold'))
 get_quality_of_life_button.config(bg="#FF5722", fg="white", font=('Helvetica', 10, 'bold'))
@@ -134,6 +137,7 @@ check_headers_button.config(bg="#E91E63", fg="white", font=('Helvetica', 10, 'bo
 display_columns_button.config(bg="#673AB7", fg="white", font=('Helvetica', 10, 'bold'))
 
 plot_button.config(bg="#FF5722", fg="white", font=('Helvetica', 10, 'bold'))
+run_models_button.config(bg="#FF9800", fg="white", font=('Helvetica', 10, 'bold'))
 
 # Arrange the widgets in the window
 get_covid_button.grid(row=0, column=0, sticky="ew", padx=5, pady=5)
@@ -146,6 +150,7 @@ merge_datasets_button.grid(row=3, column=0, columnspan=4, sticky="ew", padx=5, p
 check_headers_button.grid(row=4, column=0, sticky="ew", padx=5, pady=5)
 display_columns_button.grid(row=4, column=1, sticky="ew", padx=5, pady=5)
 plot_button.grid(row=4, column=2, sticky="ew", padx=5, pady=5)
+run_models_button.grid(row=4, column=3, sticky="ew", padx=5, pady=5)
 
 # Run the main event loop
 root.mainloop()
