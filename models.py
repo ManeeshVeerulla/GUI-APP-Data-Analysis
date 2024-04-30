@@ -2,6 +2,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
+import pandas as pd 
+df=pd.read_csv("merged_dataset.csv")
 
 def run_regression(df):
     # Assuming 'target' is the target variable column name

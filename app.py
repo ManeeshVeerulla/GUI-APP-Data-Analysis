@@ -1,8 +1,9 @@
 import tkinter as tk
 from tkinter import messagebox, filedialog
-import Data
 import pandas as pd
-import matplotlib.pyplot as plt
+from matplotlib.figure import Figure
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import Data
 
 # Function to fetch data when the corresponding button is clicked
 def fetch_data(fetch_func, success_msg):
@@ -72,19 +73,10 @@ def display_columns():
     else:
         messagebox.showerror("Error", "DataFrame is empty.")
 
-# Function to visualize merged dataset
-def visualize_merged_dataset(df):
-    if df is not None:
-        # Sample visualization (you can replace this with your desired visualization)
-        plt.figure(figsize=(10, 6))
-        plt.scatter(df['Population'], df['Life Expectancy'], alpha=0.5)
-        plt.title('Population vs Life Expectancy')
-        plt.xlabel('Population')
-        plt.ylabel('Life Expectancy')
-        plt.grid(True)
-        plt.show()
-    else:
-        messagebox.showerror("Error", "DataFrame is empty.")
+# Function to plot the data
+def plot_data():
+    import viz
+    viz.plot_data()
 
 # Create the main window
 root = tk.Tk()
@@ -125,8 +117,8 @@ merge_datasets_button = tk.Button(root, text="MERGE DATA", command=merge_dataset
 check_headers_button = tk.Button(root, text="CHECK HEADERS", command=check_headers)
 display_columns_button = tk.Button(root, text="CHECK COLUMN", command=display_columns)
 
-# Create the button to visualize merged dataset
-visualize_merged_button = tk.Button(root, text="VISUALIZE MERGED DATASET", command=lambda: visualize_merged_dataset(merged_df))
+# Create the button to plot the data
+plot_button = tk.Button(root, text="PLOT DATA", command=plot_data, relief=tk.RAISED, padx=10, pady=5, anchor="w")
 
 # Apply some style enhancements
 get_covid_button.config(bg="#4CAF50", fg="white", font=('Helvetica', 10, 'bold'))  # Change background color, font color, and font style
@@ -141,7 +133,7 @@ merge_datasets_button.config(bg="#795548", fg="white", font=('Helvetica', 10, 'b
 check_headers_button.config(bg="#E91E63", fg="white", font=('Helvetica', 10, 'bold'))
 display_columns_button.config(bg="#673AB7", fg="white", font=('Helvetica', 10, 'bold'))
 
-visualize_merged_button.config(bg="#FF5722", fg="white", font=('Helvetica', 10, 'bold'))
+plot_button.config(bg="#FF5722", fg="white", font=('Helvetica', 10, 'bold'))
 
 # Arrange the widgets in the window
 get_covid_button.grid(row=0, column=0, sticky="ew", padx=5, pady=5)
@@ -153,7 +145,7 @@ eda_button.grid(row=2, column=0, columnspan=4, sticky="ew", padx=5, pady=5)
 merge_datasets_button.grid(row=3, column=0, columnspan=4, sticky="ew", padx=5, pady=5)
 check_headers_button.grid(row=4, column=0, sticky="ew", padx=5, pady=5)
 display_columns_button.grid(row=4, column=1, sticky="ew", padx=5, pady=5)
-visualize_merged_button.grid(row=4, column=2, sticky="ew", padx=5, pady=5)
+plot_button.grid(row=4, column=2, sticky="ew", padx=5, pady=5)
 
 # Run the main event loop
 root.mainloop()
