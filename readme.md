@@ -16,7 +16,7 @@ To clone this repository to your local machine, follow these steps:
 
 4. Clone the repository using the following command:
 
-    git clone https://github.com/ManeeshVeerulla/ITMS-548-Final-Project.git
+    `git clone https://github.com/ManeeshVeerulla/ITMS-548-Final-Project.git`
 
 5. Press Enter to execute the command. Git will clone the repository to your local machine.
 
@@ -28,8 +28,9 @@ To run the application, ensure that you have Python installed on your system. Yo
 
 Navigate to the `GUI-APP-Data-Analysis` directory that you cloned in the previous step.
 
-Run the `app.py` script using the following command:
-python app.py
+Run the app.py script using the following command:
+
+    `python app.py`
 
 This will launch the GUI application, allowing you to interact with the various features for data analysis.
 
@@ -52,7 +53,7 @@ The application requires the following dependencies:
 
 You can install the dependencies using pip:
 
-pip install -r requirements.txt
+    `pip install -r requirements.txt`
 
 ## Contribution
 
