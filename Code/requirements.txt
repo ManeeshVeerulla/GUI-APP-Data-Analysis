@@ -1,0 +1,7 @@
+lxml
+pandas
+requests
+beautifulsoup4
+html5lib
+matplotlib
+scikit-learn
