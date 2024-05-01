@@ -20,13 +20,13 @@ cd path/to/directory
 
 5. Press Enter to execute the command. Git will clone the repository to your local machine.
 
-6. Once the cloning process is complete, you'll have a new directory named `GUI-APP-Data-Analysis` in your current directory, containing all the files from the GitHub repository.
+6. Once the cloning process is complete, you'll have a new directory named `ITMS-548-Final-Project` in your current directory, containing all the files from the GitHub repository.
 
 ## Running the Application
 
 To run the application, ensure that you have Python installed on your system. You can download and install Python from [here](https://www.python.org/downloads/).
 
-Navigate to the `GUI-APP-Data-Analysis` directory that you cloned in the previous step.
+Navigate to the `ITMS-548-Final-Project` directory that you cloned in the previous step.
 
 Run the app.py script using the following command:
 
