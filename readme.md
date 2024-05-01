@@ -12,13 +12,11 @@ To clone this repository to your local machine, follow these steps:
 
 3. Navigate to the directory where you want to clone the repository using the `cd` command:
 
-
 cd path/to/directory
+
 4. Clone the repository using the following command:
 
-git clone https://github.com/ManeeshVeerulla/GUI-APP-Data-Analysis.git
-
-
+git clone https://github.com/ManeeshVeerulla/ITMS-548-Final-Project.git
 
 5. Press Enter to execute the command. Git will clone the repository to your local machine.
 
@@ -55,8 +53,6 @@ The application requires the following dependencies:
 You can install the dependencies using pip:
 
 pip install -r requirements.txt
-
-GUI.png
 
 ## Contribution
 
